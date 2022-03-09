@@ -8,6 +8,10 @@ const certificate  = fs.readFileSync('/etc/letsencrypt/live/tech.llac.adv.br/cer
 
 const app = express()
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 const httpServer = http.createServer(app)
 const httpsServer = https.createServer({key: privateKey, cert: certificate}, app)
 
