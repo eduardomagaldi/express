@@ -8,7 +8,7 @@ const certificate  = fs.readFileSync('/etc/letsencrypt/live/tech.llac.adv.br/cer
 
 const app = express()
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.send('Hello World!')
 })
 
