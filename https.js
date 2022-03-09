@@ -1,10 +1,11 @@
 const fs = require('fs')
 const http = require('http')
 const https = require('https')
-const privateKey  = fs.readFileSync('./tech.llac.adv.br.fullchain.pem', 'utf8')
-const certificate = fs.readFileSync('./tech.llac.adv.br.privkey.pem', 'utf8')
-
 const express = require('express')
+
+const privateKey  = fs.readFileSync('/etc/letsencrypt/live/tech.llac.adv.br/privkey.pem', 'utf8')
+const certificate  = fs.readFileSync('/etc/letsencrypt/live/tech.llac.adv.br/cert.pem', 'utf8')
+
 const app = express()
 
 const httpServer = http.createServer(app)
